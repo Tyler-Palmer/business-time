@@ -5,9 +5,8 @@ body{
     font-family: arial;
     height: 100%;
     width: 100%;
-    /* background-color: #F25F5C; */
+    /* background-color: #70C1B3; */
     z-index: -1;
-   
 }
 
 main{
@@ -18,7 +17,7 @@ main{
 }
 
 header{
-    background-color: #F25F5C;
+    background-color: #70C1B3;
     top: -10px;
     padding: 5px;
     color: #ffffff;
@@ -32,6 +31,10 @@ header p{
     text-align: center;
 }
 
+a{
+    text-decoration: none;
+}
+
 nav{
     position: relative;
     margin-top: 0px;
@@ -43,9 +46,6 @@ nav{
     height: 15%;
 }
 
-a{
-    text-decoration: none;
-}
 nav a{
     display: flex;
     text-decoration: none;
@@ -59,7 +59,7 @@ nav a{
 }
 
 nav a:hover{
-    background-color: #F25F5C;
+    background-color: #70C1B3;
     color: black;
 }
 
@@ -72,103 +72,72 @@ h1{
 }
 .padmasana{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    background-image: url(./exercises/business-images/padmasana.svg);
+    background-image: url(./images/padmasana.svg);
     background-attachment: fixed;
-    background-position: center;
+    background-position: flex-start;
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: flex-start;
     height: 50%;
     width: 50%;
     position: absolute;
-    z-index: 2;
+    z-index: -1;
     background-repeat: no-repeat;
 }
 
 .parallax1{
-    display: flex;
-    height: 45vh;
+    height: 55vh;
     width: 100%;
-    position: relative;
-    background-image: url(./images/succulents.jpg);
+    background-image: url(../images/succulents.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
+    /* padding: 10px; */
+}
+
+#oldquotes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 100%;
+    overflow: auto;
+}
+
+#oldquotes .quote{
+    display: inline-block;
+    font-size: 1.5em;
+    color: white;
+    padding-left: 40px;
+    box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.4);
+}
+
+#oldquotes > #q1, #q2, #q3, #q4{
+    line-height: .8em;
 }
 
 .parallax2{
     display: flex;
-    height: 600px;
+    height: 400px;
     width: 100%;
-    position: relative;
-    background-image: url(./images/succulents.jpg);
+    background-image: url(../images/succulents.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
-}
-
-.parallax1 > img,
-.parallax2 > img{
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .about-container{
-display: block;
-position: relative;
-height: 450px;
-width: 100%;
+display: flex;
+position: fixed;
+height: 400px;
+width: 100px;
 background-color: #50514F;
-z-index:2;
-/* bottom: 100px; */
-}
-
-.text-container-1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px;
-    color: white;
-    padding: 2px;
-    position: absolute;
-}
-
-.text-container-1 > img{
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-}
-
-.text-container-1 #staff1{
-    padding: 10px;
-    height: 100%;
-    width: 50%;
-}
-
-.text-container-1 #staff2{
-    padding: 10px;
-    height: 100%;
-    width: 50%;
-}
-
-.text-container-2{
-    padding: 15px;
-    background-color: grey;
-    opacity: .9;
-    height: 300px;
-    width: 100%;
-}
-
-.text-container-2a{
-    color: white;
-    opacity: .9;
 }
 
 .menuBox{
@@ -179,28 +148,25 @@ z-index:2;
     flex-wrap: wrap;
     width: 100%;
     height: 1000px;
-    position: relative;
-    background-color: #247BA0;
+    background-color: #FFE066;
     padding-top: 20px;
-    z-index: 1;
     /* opacity: .75; */
 }
 
 .benefits,
 .about,
-.calendar{
+.calendar,{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
-    text-decoration: none;
 }
 
-
 .calendar span{
-padding-left: 40px;
+    padding-left: 40px;
+
 }
 
 h3.menuText{
@@ -219,7 +185,7 @@ span{
  .container{
     display: flex;
     justify-content: center;
-    background-color: #FFE066;
+    background-color: #F25F5C;
     height: 50px;
     z-index: 2;
     color: white;
@@ -229,33 +195,18 @@ span{
     .menuBox{
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
         height: 400px;
     }
-    .text-container-2{
-        height: 100px;
-        padding-right: 20px;
-    }
-    .about-container{
-        height: 100px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }        
-}
-
-@media (min-width: 425px){
-    .text-container-2{
-        height: 55%;
-    }
-    .about-container{
-        height: 39vh;
+    .parallax1 .quote{
+        padding-left: 550px;
     }
 }
 
-@media (min-width: 768px){
+@media only screen and (min-width: 768px){
     .menuBox{
         display: flex;
         flex-direction: row;
@@ -265,19 +216,11 @@ span{
         width: 100%;
         height: 400px;
     }
-    .text-container-2{
-        height: 45%;
+    .parallax1 .quote{
+        padding-left: 250px;
     }
-    .about-container{
-        height: 35vh;
-        padding-left: 40px;
-        padding-right: 10px;
-    }
-}
 
-
-@media (min-width: 1024px){
-    .text-container-2{
-        height: 45%;
+    #oldquotes > .quote p{
+        display: inline-block;
     }
 }
