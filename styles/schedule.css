@@ -1,12 +1,13 @@
 body{
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     font-family: arial;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     /* background-color: #FFE066; */
     z-index: -1;
+    overflow-x: hidden;
 }
 
 main{
@@ -14,6 +15,7 @@ main{
     flex-direction: column;
     justify-content: center;
     position: relative;
+    max-width: 100%;
 }
 
 header{
@@ -23,6 +25,7 @@ header{
     color: #ffffff;
     text-align: center;
     z-index: 1;
+    max-width: 100%;
 }
 
 a{
@@ -41,7 +44,7 @@ nav{
     display: flex;
     background: #50514F;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 1;
     height: 15%;
     padding-left: 3px;
@@ -57,7 +60,7 @@ nav a{
     color: white;
     z-index:1;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1em;
     
 }
 
@@ -76,9 +79,13 @@ h1{
 
 .schedule{
     position: absolute;
-    width: 100%;
+    max-width: 100%;
     height: 10vh;
     float: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
 }
 
 .schedule ul{
@@ -90,15 +97,17 @@ h1{
     width: 100%;
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url(../images/succulents.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
 }
 
-.parallax1 .schedule{
+.schedule{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,12 +121,12 @@ h1{
     width: 100%;
     border-radius: 20px;
 }
-.parallax1 .schedule ul{
+.schedule ul{
     padding-left: 10px;
     line-height: 1.5em;
 }
 
-.parallax1 .schedule h3, h5{
+.schedule h3, h5{
     line-height: .3em;
 }
 
@@ -140,13 +149,6 @@ h1{
     z-index: 1;
 }
 
-.about-container{
-display: flex;
-position: fixed;
-height: 600px;
-width: 100px;
-background-color: #50514F;
-}
 .menuBox{
     display: flex;
     flex-direction: column;
@@ -162,19 +164,21 @@ background-color: #50514F;
 
 .benefits,
 .about,
-.calendar,{
+.calendar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.calendar span{
+/* .calendar span{
     padding-left: 40px;
 
-}
+} */
 
 h3.menuText{
     display: block;
@@ -198,7 +202,7 @@ span{
     color: white;
 }
 
-@media only screen and (min-width: 1024px){
+@media (min-width: 768px){
     .menuBox{
         display: flex;
         flex-direction: row;
@@ -207,10 +211,29 @@ span{
         flex-wrap: wrap;
         width: 100%;
         height: 400px;
+    }
+    .schedule{
+        height: 65%;
+        max-width: 60%;
+    }
+    .schedule ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+    }
+
+    .schedule h3{
+        font-size: 1.75em;
+    }
+    .schedule h5{
+        font-size: 1.25em;
+        margin-top: 5px;
+        margin-bottom: 15px;
     }
 }
 
-@media only screen and (min-width: 768px){
+@media (min-width: 1024px){
     .menuBox{
         display: flex;
         flex-direction: row;
@@ -220,9 +243,30 @@ span{
         width: 100%;
         height: 400px;
     }
-    .parallax1 .schedule{
-        height: 45%;
-        width: 50%;
-        left: 25%;
+    nav a{
+        font-size: 1.5em;
+    }
+
+    .schedule{
+        height: 70%;
+        max-width: 70%;
+    }
+
+    .schedule li{
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+
+    .schedule h3{
+        font-size: 2.25em;
+    }
+    .schedule h5{
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 1440px){
+    nav a{
+        font-size: 1.75em;
     }
 }

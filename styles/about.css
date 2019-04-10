@@ -1,12 +1,13 @@
 body{
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     font-family: arial;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     /* background-color: #F25F5C; */
     z-index: -1;
+    overflow-x: hidden;
    
 }
 
@@ -15,6 +16,7 @@ main{
     flex-direction: column;
     justify-content: center;
     position: relative;
+    max-width: 100%;
 }
 
 header{
@@ -24,6 +26,8 @@ header{
     color: #ffffff;
     text-align: center;
     z-index: 1;
+    margin: 0;
+    max-width: 100%;
 }
 
 header p{
@@ -38,9 +42,10 @@ nav{
     display: flex;
     background: #50514F;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 1;
     height: 15%;
+    max-width: 100%;
 }
 
 a{
@@ -51,11 +56,11 @@ nav a{
     text-decoration: none;
     justify-content: center;
     align-items: space-around;
-    padding: 10px;
+    padding: 5px;
     color: white;
     z-index:1;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 nav a:hover{
@@ -88,7 +93,7 @@ h1{
 
 .parallax1{
     display: flex;
-    height: 45vh;
+    height: 85vh;
     width: 100%;
     position: relative;
     background-image: url(../images/succulents.jpg);
@@ -122,10 +127,11 @@ h1{
 .about-container{
 display: block;
 position: relative;
-height: 450px;
-width: 100%;
+height: 80%;
+width: 100vw;
 background-color: #50514F;
 z-index:2;
+padding: 10px;
 /* bottom: 100px; */
 }
 
@@ -137,6 +143,7 @@ z-index:2;
     color: white;
     padding: 2px;
     position: absolute;
+    height: 100%;
 }
 
 .text-container-1 > img{
@@ -159,17 +166,22 @@ z-index:2;
 }
 
 .text-container-2{
-    padding: 15px;
     background-color: grey;
     opacity: .9;
-    height: 300px;
     width: 100%;
-}
-
-.text-container-2a{
+    display: flex;
+    flex-direction: column;
     color: white;
     opacity: .9;
+    padding: 10px;
+    height: 70%;
+    width: 100vw;
+    overflow: hidden;
 }
+
+/* .text-container-2 p{
+    height: 100%;
+} */
 
 .menuBox{
     display: flex;
@@ -192,16 +204,17 @@ z-index:2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 10px;
     text-decoration: none;
+    text-align: center;
 }
 
 
-.calendar span{
-padding-left: 40px;
-}
+/* .calendar span{
+padding-left: 35px;
+} */
 
 h3.menuText{
     display: block;
@@ -225,34 +238,28 @@ span{
     color: white;
 }
 
-@media only screen and (min-width: 1024px){
-    .menuBox{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 400px;
-    }
+@media (min-width: 375px){
     .text-container-2{
-        height: 100px;
-        padding-right: 20px;
+        height: 60%
     }
     .about-container{
-        height: 100px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }        
+        height: 70%;
+    }
 }
 
 @media (min-width: 425px){
     .text-container-2{
-        height: 55%;
+        height: 30%;
     }
     .about-container{
-        height: 39vh;
+        height: 40%;
     }
+    h2{
+        margin-bottom: 0;
+    }
+    /* p{
+        font-size: .8em;
+    } */
 }
 
 @media (min-width: 768px){
@@ -262,22 +269,61 @@ span{
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        width: 100%;
+        width: 100vw;
         height: 400px;
     }
+     h3.menuText{
+        font-size: 2em;
+    }
     .text-container-2{
-        height: 45%;
+        height: 35%;
+        font-size: 1.1em;
     }
     .about-container{
-        height: 35vh;
+        height: 45%;
         padding-left: 40px;
         padding-right: 10px;
+    }
+    p{
+        font-size: .8em;
     }
 }
 
 
 @media (min-width: 1024px){
+
+    .menuBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 400px;
+    }
     .text-container-2{
-        height: 45%;
+        height: 50%;
+        padding-right: 20px;
+    }
+    .about-container{
+        height: 55%;
+        padding-left: 20px;
+        padding-right: 20px;
+    } 
+    p{
+        font-size: 1.3em !important;
+    }
+
+    nav a{
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1440px){
+    .text-container-2{
+        height: 30%
+    }
+
+    nav a{
+        font-size: 1.75em;
     }
 }

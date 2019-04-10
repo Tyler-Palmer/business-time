@@ -1,12 +1,13 @@
 body{
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     font-family: arial;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     /* background-color: #70C1B3; */
     z-index: -1;
+    overflow-x: hidden;
 }
 
 main{
@@ -14,15 +15,18 @@ main{
     flex-direction: column;
     justify-content: center;
     position: relative;
+    max-width: 100%;
 }
 
 header{
-    background-color: #70C1B3;
+    background: #70C1B3;
     top: -10px;
     padding: 5px;
     color: #ffffff;
     text-align: center;
     z-index: 1;
+    margin: 0;
+    max-width: 100%;
 }
 
 header p{
@@ -41,9 +45,10 @@ nav{
     display: flex;
     background: #50514F;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 1;
     height: 15%;
+    max-width: 100%;
 }
 
 nav a{
@@ -55,7 +60,7 @@ nav a{
     color: white;
     z-index:1;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 nav a:hover{
@@ -88,14 +93,14 @@ h1{
 }
 
 .parallax1{
-    height: 55vh;
+    height: 85vh;
     width: 100%;
     background-image: url(../images/succulents.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
+    z-index: -1;
     /* padding: 10px; */
 }
 
@@ -103,12 +108,15 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-content: center;
+    align-items: center;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
+    padding: 5px;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
-#oldquotes .quote{
+.quote{
     display: inline-block;
     font-size: 1.5em;
     color: white;
@@ -116,9 +124,14 @@ h1{
     box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.4);
 }
 
-#oldquotes > #q1, #q2, #q3, #q4{
-    line-height: .8em;
+.quote p{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+/* #oldquotes > #q1, #q2, #q3, #q4{
+    line-height: .8em;
+} */
 
 .parallax2{
     display: flex;
@@ -129,7 +142,7 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 0;
+    z-index: 1;
 }
 
 .about-container{
@@ -149,25 +162,28 @@ background-color: #50514F;
     width: 100%;
     height: 1000px;
     background-color: #FFE066;
+    z-index: 1;
     padding-top: 20px;
     /* opacity: .75; */
 }
 
 .benefits,
 .about,
-.calendar,{
+.calendar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.calendar span{
-    padding-left: 40px;
+/* .calendar span{
+    padding-left: 35px;
 
-}
+} */
 
 h3.menuText{
     display: block;
@@ -191,22 +207,16 @@ span{
     color: white;
 }
 
-@media only screen and (min-width: 1024px){
-    .menuBox{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 400px;
+@media (min-width: 425px){
+    .parallax2{
+        height: 30vh;
     }
-    .parallax1 .quote{
-        padding-left: 550px;
+    .quote{
+        width: 70%;
     }
 }
 
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     .menuBox{
         display: flex;
         flex-direction: row;
@@ -216,11 +226,45 @@ span{
         width: 100%;
         height: 400px;
     }
-    .parallax1 .quote{
+    /* .parallax1 .quote{
         padding-left: 250px;
-    }
+    } */
 
     #oldquotes > .quote p{
         display: inline-block;
+    }
+
+    .quote{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px){
+    .menuBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 400px;
+    }
+
+    nav a{
+        font-size: 1.5em;
+    }
+
+    .quote{
+        font-size: 2.5em;
+        width: 65%;
+    }
+}
+
+@media (min-width: 1440px){
+    nav a{
+        font-size: 1.75em;
+    }
+    .quote{
+        font-size: 3em;
     }
 }
